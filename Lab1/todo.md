@@ -2,6 +2,6 @@
 
 - [x] Reverse Integer
 - [x] Greatest Common Divisor
-- [ ] Palindrome Number
-- [ ] Power Function
+- [x] Palindrome Number
+- [x] Power Function
 - [ ] Power of Two
