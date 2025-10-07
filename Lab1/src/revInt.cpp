@@ -7,12 +7,13 @@
   Numbers will be outputted to standard output in this file, but the function itself returns the true negative value without padding
 
   Example input: 12345
-  Example output: 54321
+  Example reversed output: 54321
 
   For numbers ending in 0, the stdout contains a leftpadded 0, the function does not (since it returns integer).
+
   Example input: -420
-  Example stdout output: -024
-  Example function output: -24
+  Example reversed output: -024
+  Example actual value output: -24
 
 */
 int revInt(int in){
@@ -51,11 +52,20 @@ int main() {
     
     // run the function for multiple numbers to test the outputs
 
+    int input;
+    std::cout << "Input a number to reverse: ";
+    std::cin >> input;
+    std::cout << "Reversed Number: ";
+    int x = revInt(input);
+    std::cout << "Actual Value: " << x << std::endl;
+
+    /*
     revInt(12345);
     revInt(54321);
     revInt(-123);
     revInt(-420);
     revInt(1337);
     revInt(10105);
+    */
 }
 

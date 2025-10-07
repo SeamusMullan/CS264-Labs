@@ -1,0 +1,7 @@
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/GCD.dir
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/palNum.dir
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/powFun.dir
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/powTwo.dir
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/revInt.dir
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/edit_cache.dir
+/Users/seamusmullan/GitHub/CS264-Labs/Lab1/build/CMakeFiles/rebuild_cache.dir
