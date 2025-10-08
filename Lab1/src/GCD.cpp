@@ -37,11 +37,14 @@ int GCD(int a, int b){
 }
 
 int main() {
-    // Test the function with some example values (and expected value on end)
-    std::cout << GCD(12, 24) << std::endl; // 12
-    std::cout << GCD(1, 2) << std::endl; // 1
-    std::cout << GCD(-3, 9) << std::endl; // -3 
-    std::cout << GCD(8, 13) << std::endl; // 1
-    std::cout << GCD(256, 2) << std::endl; // 2
-    std::cout << GCD(2, 256) << std::endl; // 2
+    int x,y;
+
+    std::cout << "Input First Number: ";
+    std::cin >> x;
+
+    std::cout << "Input Second Number: ";
+    std::cin >> y;
+
+    std::cout << "GCD is " << GCD(x,y) << std::endl;
+
 }
