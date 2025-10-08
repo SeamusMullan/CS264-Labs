@@ -1,21 +1,20 @@
 #include <iostream>
 
-
 /**
-
-  This function takes an input integer and reverses the numbers in the integer.
-  Numbers will be outputted to standard output in this file, but the function itself returns the true negative value without padding
-
-  Example input: 12345
-  Example reversed output: 54321
-
-  For numbers ending in 0, the stdout contains a leftpadded 0, the function does not (since it returns integer).
-
-  Example input: -420
-  Example reversed output: -024
-  Example actual value output: -24
-
-*/
+ * @brief This function reverses an integer and returns the value of the reversed number.
+ *
+ * The function returns the actual value of the reversed number. Numbers ending in 0 will end up
+ * having a different value to the reversed string of digits.
+ *
+ * An example would be the number -120
+ * which would be written "-021" if the digits were reversed
+ * but would actually be equal to -21
+ *
+ * The function prints the reversed number with 0's on the left side to the console.
+ *
+ * @param in The number to reverse
+ * @return The value of the reversed number.
+ */
 int revInt(int in){
 
     int out = 0;
@@ -30,7 +29,6 @@ int revInt(int in){
 
     // recursively get the first number (rightmost), add to out and do out*10.
     // use mod 10 and divide to move numbers across from input
-    
     while (in>0){
         int temp = in % 10; // number on right
         out *= 10;
@@ -50,7 +48,6 @@ int revInt(int in){
 
 int main() {
     
-    // run the function for multiple numbers to test the outputs
 
     int input;
     std::cout << "Input a number to reverse: ";
@@ -59,6 +56,7 @@ int main() {
     int x = revInt(input);
     std::cout << "Actual Value: " << x << std::endl;
 
+    // run the function for multiple numbers to test the outputs
     /*
     revInt(12345);
     revInt(54321);

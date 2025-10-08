@@ -1,8 +1,11 @@
 #include <iostream>
 
-// convert the number to a string, then use 2 pointers to verify if both halfs are identical
-// if not, we dont have a palindrome number
-
+/**
+ * @brief This function checks if a number's digits make up a palindrome
+ *
+ * @param num The input number to check
+ * @return boolean value if number is a palindrome
+ */
 bool palNum( int num ){
     // convert number to a string so we can index it.
     std::string str = std::to_string(num);

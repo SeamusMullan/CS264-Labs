@@ -1,19 +1,24 @@
 #include <iostream>
 
 /**
-    This method calculates the Greatest Common Divisor (GCD) of a pair of numbers
-
-    The GCD is calculated by the 'Euclidian Algorithm' which basically does the following;
-
-    - We can recursively shrink the second number, in this case b and then swap the inputs.
-    - when b is 0, we have found the gcd and can return it (will be in the a section)
-
-    This also works for negative numbers, see https://proofwiki.org/wiki/GCD_for_Negative_Integers
-    for proofs that gcd(a,b) = gcd(a,|b|) and other variations.
- 
-*/
+ * @brief Calculates the Greatest Common Divisor (AKA Highest Common Factor) for a and b
+ * 
+ * This function accounts for negative numbers and uses the following proof as a reference.
+ *
+ * The GCD is calculated by the 'Euclidian Algorithm' which basically does the following;
+ *
+ * - We can recursively shrink the second number, in this case b and then swap the inputs.
+ * - when b is 0, we have found the gcd and can return it (will be in the a section)
+ * 
+ * https://proofwiki.org/wiki/GCD_for_Negative_Integers shows gcd(x,y) = gcd(|x|,y) or vice versa.
+ *
+ * @param a first number
+ * @param b second number
+ * @return GCD of the two numbers
+ */
 int GCD(int a, int b){
     // abs value of numbers to ensure negatives dont break things.
+    // this doesnt change output, see attached proof.
     if (a<0) {a*=-1;}
     if (b<0) {b*=-1;}
 
@@ -24,7 +29,7 @@ int GCD(int a, int b){
         return a;
     } else {
         // If we actually have two numbers, 
-        // recursively shrink the second input using modulus
+        // recursively shrink the second input using modulus until we have 0 in one of the inputs.
         out = GCD(b, a%b);
     }
 
@@ -32,7 +37,7 @@ int GCD(int a, int b){
 }
 
 int main() {
-    // Test the function with some example values
+    // Test the function with some example values (and expected value on end)
     std::cout << GCD(12, 24) << std::endl; // 12
     std::cout << GCD(1, 2) << std::endl; // 1
     std::cout << GCD(-3, 9) << std::endl; // -3 
