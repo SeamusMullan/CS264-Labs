@@ -1,6 +1,16 @@
 #pragma once
+
+#include <stdio.h>
+
 namespace testing {
-    /**
+    
+    bool debug = false;
+
+    void setDebug(bool val){
+        debug = val;
+    }
+
+     /**
      *
      * @tparam T This allows us to use any type in the function
      * @param a var1
@@ -9,6 +19,10 @@ namespace testing {
      */
     template <typename T>
     bool assert_equals(T const & a, T const & b) {
+        if (debug){
+            std::cout << "Input for a: " << a << std::endl;
+            std::cout << "Input for b: " << b << std::endl;
+        }
         return a == b;
     }
 
@@ -21,6 +35,10 @@ namespace testing {
      */
     template <typename T>
     inline bool assert_not_equal(T const & a, T const & b) {
+        if (debug){
+            std::cout << "Input for a: " << a << std::endl;
+            std::cout << "Input for b: " << b << std::endl;
+        }
         return a != b;
     }
 
