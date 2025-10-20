@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "test.h"
+#include "length.h"
 
 /**
  * @brief Return the length of a string.

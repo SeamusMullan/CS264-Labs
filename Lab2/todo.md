@@ -4,7 +4,7 @@ This lab is about string functions in C++.
 
 ## Questions
 
-- [ ] unsigned int length (const char* str)
+- [x] unsigned int length (const char* str)
 - [ ] char* copy (char* dest, const char* src) 
 - [ ] int indexOf (char c, const char* str)
 - [ ] char* substring (int i, int j, const char* str) 
@@ -12,7 +12,7 @@ This lab is about string functions in C++.
 
 ## Comments
 
-- [ ] unsigned int length (const char* str)
+- [x] unsigned int length (const char* str)
 - [ ] char* copy (char* dest, const char* src) 
 - [ ] int indexOf (char c, const char* str)
 - [ ] char* substring (int i, int j, const char* str) 
@@ -20,7 +20,7 @@ This lab is about string functions in C++.
 
 ## Tests
 
-- [ ] unsigned int length (const char* str)
+- [x] unsigned int length (const char* str)
 - [ ] char* copy (char* dest, const char* src) 
 - [ ] int indexOf (char c, const char* str)
 - [ ] char* substring (int i, int j, const char* str) 
