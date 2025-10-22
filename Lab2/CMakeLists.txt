@@ -4,14 +4,12 @@ project(MultiExe)
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 
 file(GLOB SRC_FILES "${SRC_DIR}/*.cpp")
-
+file(GLOB HEADERS "${SRC_DIR}/*.h")
 # For each source file, create an executable
 foreach(SRC_FILE ${SRC_FILES})
     # Extract filename without extension
     get_filename_component(EXE_NAME ${SRC_FILE} NAME_WE)
 
     # Create an executable with that name
-    add_executable(${EXE_NAME} ${SRC_FILE}
-            src/test.h
-    )
+    add_executable(${EXE_NAME} ${SRC_FILE} ${HEADERS})
 endforeach()
