@@ -11,10 +11,11 @@
 char* copy(char* dest, const char* src) {
     // get len of destination, if less than source, we can't copy so return null
     // add 1 to account for the null terminator not counted in length()
-    int d=length(dest)+1;
+    int d=length((const char*)dest)+1;
     int s=length(src)+1;
+
     if(d<s)
-        return (char*)nullptr;
+        return NULL;
 
     // overwrite every character in the destination.
     // if we have already copied all the source, fill with null terminators
