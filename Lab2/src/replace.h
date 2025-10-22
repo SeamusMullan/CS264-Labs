@@ -11,7 +11,7 @@
  */
 char* replace (char c, char p, const char* str){
     int len = length(str);  
-    char* out = new char[len]; // make a new string for the output
+    char* out = new char[len + 1]; // make a new string for the output
 
     // for every character, replace c with p, or keep the same
     for (int i=0;i<len;i++){

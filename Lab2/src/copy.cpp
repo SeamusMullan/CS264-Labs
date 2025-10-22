@@ -17,6 +17,7 @@ void copy_name_test_case_1(){
     copy(b, a);
     bool out = testing::assert_equals((const char*)a, (const char*)b);
     if (out) { passed++; }
+    delete[] b; // free allocated memory
 }
 
 /**
@@ -29,6 +30,7 @@ void copy_name_test_case_2(){
     // expect the copied data to equal the string before \0
     bool out = testing::assert_equals((const char*)"hello", (const char*)copy(b, a));
     if (out) { passed++; }
+    delete[] b; // free allocated memory
 }
 
 /**
@@ -42,6 +44,7 @@ void copy_name_test_case_3(){
     char* pout = copy(b, a);
     // if copy returns NULL, it successfully stopped copying.
     if (testing::is_null(pout)) { passed++; }
+    delete[] b; // free allocated memory
 }
 
 int main(){

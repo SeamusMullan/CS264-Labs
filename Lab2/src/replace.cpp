@@ -11,8 +11,10 @@ unsigned int passed = 0;
 */
 void replace_name_test_case_1(){
     const char* in = "string";
-    bool out = testing::assert_equals((const char*)"strxng", (const char*)replace('i', 'x', in));
+    char* result = replace('i', 'x', in);
+    bool out = testing::assert_equals((const char*)"strxng", (const char*)result);
     if (out) {passed++;}
+    delete[] result; // free allocated memory
 }
 
 /**
@@ -21,8 +23,10 @@ void replace_name_test_case_1(){
 */
 void replace_name_test_case_2(){
     const char* in = "hello";
-    bool out = testing::assert_equals((const char*)"hello", (const char*)replace('i', 'j', in));
+    char* result = replace('i', 'j', in);
+    bool out = testing::assert_equals((const char*)"hello", (const char*)result);
     if (out) {passed++;}
+    delete[] result; // free allocated memory
 }
 
 int main() {
