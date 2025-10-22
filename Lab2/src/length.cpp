@@ -17,6 +17,7 @@
  */
 unsigned int length(const char* str){
     unsigned int len = 0;
+    // count along every byte until we reach a null terminator.
     for (const char* p = str; *p != '\0'; p++){
         len++;
     }
@@ -67,7 +68,7 @@ void length_name_test_case_3() {
  * character delta as 2 characters, since char is a single byte by default
  */
 void length_name_test_case_4() {
-    unsigned int a = length("Δ"); // greek letter delta 
+    unsigned int a = length("Δ"); // greek letter delta
     unsigned int b = 2;
     bool out = testing::assert_equals(a, b);
     if (out) { passed++; }
@@ -97,5 +98,4 @@ int main(){
 
     std::cout << passed << "/5 tests passed." << std::endl;
 }
-
 
