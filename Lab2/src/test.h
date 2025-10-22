@@ -28,6 +28,19 @@ namespace testing {
     }
 
     /**
+     * @brief Check if a pointer is a nullptr
+     *
+     * @tparam T allows use of any type
+     * @param a the pointer we wish to check
+     * @return true/false if a==nullptr
+     */
+    template <typename T>
+    bool is_nullptr(T const & a){
+        if (debug) {std::cout << "Input for a: " << a << std::endl;}
+        return (a == nullptr);
+    }
+
+    /**
      *
      * @tparam T This allows us to use any type in the function
      * @param a var1

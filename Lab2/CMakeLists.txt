@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(MultiExe)
+project(CS264-Lab2)
 
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 

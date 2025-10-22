@@ -10,8 +10,9 @@
  */
 char* copy(char* dest, const char* src) {
     // get len of destination, if less than source, we can't copy so return null
-    int d=length(dest);
-    int s=length(src);
+    // add 1 to account for the null terminator not counted in length()
+    int d=length(dest)+1;
+    int s=length(src)+1;
     if(d<s)
         return (char*)nullptr;
 

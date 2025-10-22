@@ -4,7 +4,7 @@
 #include "length.h"
 #include "copy.h"
 
-unsigned int numTests = 5;
+unsigned int numTests = 3;
 unsigned int passed = 0;
 
 /**
@@ -26,6 +26,7 @@ void copy_name_test_case_1(){
 void copy_name_test_case_2(){
     char* a = (char*)"hello\0 world";
     char* b;
+    // expect the copied data to equal the string before \0
     bool out = testing::assert_equals((char*)"hello", copy(b, a));
     if (out) { passed++; }
 }
@@ -35,19 +36,21 @@ void copy_name_test_case_2(){
 * Expected Output: nullptr
 */
 void copy_name_test_case_3(){
+    // create a pointer to a smaller chunk of characters and try to copy to it.
     char* a = (char*)"some text";
-    char b[] = "a";
+    char b[2] = "a";
     char& pb = *b;
-    bool out = testing::assert_equals(copy(&pb,a), (char*)nullptr);
-    if (out) { passed++; }
+    char* pout = copy(b, a);
+    // if copy returns a nullptr, it successfully stopped copying.
+    if (testing::is_nullptr(pout)) { passed++; }
 }
 
 int main(){
     testing::setDebug(true);
-    std::cout << length("hello\0") << std::endl;
+    std::cout << "Length of word 'hello' is "<< length("hello\0") << std::endl;
     copy_name_test_case_1();
     copy_name_test_case_2();
     copy_name_test_case_3();
 
-    std::cout << passed << "/5 tests passed." << std::endl;
+    std::cout << passed << "/" << numTests << " tests passed." << std::endl;
 }
