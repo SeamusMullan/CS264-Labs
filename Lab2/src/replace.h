@@ -17,5 +17,7 @@ char* replace (char c, char p, const char* str){
     for (int i=0;i<len;i++){
         out[i] = (str[i] == c) ? p : str[i];
     }
+
+    out[len] = '\0';
     return out;
 }
