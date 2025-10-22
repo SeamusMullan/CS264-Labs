@@ -31,13 +31,13 @@ tmux rename-window -t "$SESSION:0" "Lab $LABNUM"
 tmux kill-pane -t "$SESSION:0.*" 2>/dev/null || true
 
 # left half – split vertically, then horizontally
-tmux split-window -t "$SESSION:0" -h          # ← right half (nvim)
-tmux split-window -t "$SESSION:0.1" -v          # top left (cmake)
-tmux select-pane -t "$SESSION:0.1"            # bottom left (todo)
+tmux split-window -t "$SESSION:0" -h        # left half (nvim)
+tmux split-window -t "$SESSION:0.1" -v      # bottom right (cmake)
+tmux select-pane -t "$SESSION:0.1"          # top right (todo)
 
 # ------------------------------------------------------------------
 # 4. Put commands into each pane
-tmux send-keys -t "$SESSION:0.2" "mkdir -p build && cd build && cmake .. && make" C-m
+tmux send-keys -t "$SESSION:0.2" "cd $LABDIR && rm -rf build && mkdir -p build && cd build && cmake .. && make" C-m
 tmux send-keys -t "$SESSION:0.1" "cd $LABDIR && nvim todo.md" C-m
 tmux send-keys -t "$SESSION:0.0" "cd $LABDIR && nvim ." C-m
 
