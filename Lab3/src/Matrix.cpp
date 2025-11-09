@@ -46,3 +46,16 @@ Matrix::Matrix(int** array, unsigned int m, unsigned int n) : m_rows(m), m_cols(
 Matrix::~Matrix() {
     deallocate();
 }
+
+unsigned int Matrix::rows() const {
+    return m_rows;
+}
+
+unsigned int Matrix::rows() const {
+    return m_rows;
+}
+
+unsigned int Matrix::columns() const {
+    return m_cols;
+}
+
