@@ -27,6 +27,28 @@ void Test_Case_1_Constructor() {
     cout << "PASSED\n" << endl;
 }
 
+void Test_Case_2_CopyConstructor() {
+    cout << "Test Case 2: Copy Constructor" << endl;
+    Matrix mat1(2, 2);
+    mat1.set(0, 0, 1);
+    mat1.set(0, 1, 2);
+    mat1.set(1, 0, 3);
+    mat1.set(1, 1, 4);
+    
+    Matrix mat2(mat1);
+    
+    // Check that mat2 is a copy of mat1
+    assert(mat2.rows() == mat1.rows());
+    assert(mat2.columns() == mat1.columns());
+    assert(mat2.get(0, 0) == 1);
+    assert(mat2.get(0, 1) == 2);
+    assert(mat2.get(1, 0) == 3);
+    assert(mat2.get(1, 1) == 4);
+    
+    cout << "Original matrix:\n" << mat1.toStr() << endl;
+    cout << "Copied matrix:\n" << mat2.toStr() << endl;
+    cout << "PASSED\n" << endl;
+}
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
@@ -34,6 +56,7 @@ int main() {
     
     try {
         Test_Case_1_Constructor();
+        Test_Case_2_CopyConstructor();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
