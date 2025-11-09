@@ -134,6 +134,17 @@ Matrix Matrix::operator*(const Matrix &mat) {
     }
     return result;
 }
+
+Matrix Matrix::operator~() const {
+    Matrix result(m_cols, m_rows);
+    for (unsigned int i = 0; i < m_rows; i++) {
+        for (unsigned int j = 0; j < m_cols; j++) {
+            result.data[j][i] = data[i][j];
+        }
+    }
+    return result;
+}
+
 bool Matrix::operator==(const Matrix &mat) {
     if (m_rows != mat.m_rows || m_cols != mat.m_cols) {
         return false;
