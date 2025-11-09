@@ -105,6 +105,36 @@ void Test_Case_5_Columns() {
     cout << "PASSED\n" << endl;
 }
 
+void Test_Case_6_Get() {
+    cout << "Test Case 6: get() method" << endl;
+    Matrix mat(3, 3);
+    mat.set(1, 2, 42);
+    
+    assert(mat.get(1, 2) == 42);
+    assert(mat.get(0, 0) == 0);
+    
+    cout << "Element at (1, 2): " << mat.get(1, 2) << endl;
+    cout << "PASSED\n" << endl;
+}
+
+void Test_Case_7_Set() {
+    cout << "Test Case 7: set() method" << endl;
+    Matrix mat(2, 2);
+    
+    mat.set(0, 0, 10);
+    mat.set(0, 1, 20);
+    mat.set(1, 0, 30);
+    mat.set(1, 1, 40);
+    
+    assert(mat.get(0, 0) == 10);
+    assert(mat.get(0, 1) == 20);
+    assert(mat.get(1, 0) == 30);
+    assert(mat.get(1, 1) == 40);
+    
+    cout << "Matrix after set():\n" << mat.toStr() << endl;
+    cout << "PASSED\n" << endl;
+}
+
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
@@ -116,6 +146,7 @@ int main() {
         Test_Case_3_ArrayConstructor();
         Test_Case_4_Rows();
         Test_Case_5_Columns();
+        Test_Case_7_Set();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
