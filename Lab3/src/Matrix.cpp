@@ -159,3 +159,14 @@ bool Matrix::operator==(const Matrix &mat) {
     }
     return true;
 }
+
+std::string Matrix::toStr() {
+    std::ostringstream oss;
+    for (unsigned int i = 0; i < m_rows; i++) {
+        for (unsigned int j = 0; j < m_cols; j++) {
+            oss << std::setw(5) << data[i][j];
+        }
+        oss << "\n";
+    }
+    return oss.str();
+}
