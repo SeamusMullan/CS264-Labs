@@ -1,3 +1,6 @@
+#ifndef MATRIX_H
+#define MATRIX_H
+
 #include <string>
 
 class Matrix {
@@ -41,3 +44,5 @@ public:
 
     std::string toStr();
 };
+
+#endif // MATRIX_H
