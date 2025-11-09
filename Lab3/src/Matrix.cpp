@@ -117,3 +117,20 @@ Matrix Matrix::operator-(const Matrix &mat) {
     }
     return result;
 }
+
+Matrix Matrix::operator*(const Matrix &mat) {
+    if (m_cols != mat.m_rows) {
+        throw std::invalid_argument("Matrix dimensions incompatible for multiplication");
+    }
+    
+    Matrix result(m_rows, mat.m_cols);
+    for (unsigned int i = 0; i < m_rows; i++) {
+        for (unsigned int j = 0; j < mat.m_cols; j++) {
+            result.data[i][j] = 0;
+            for (unsigned int k = 0; k < m_cols; k++) {
+                result.data[i][j] += data[i][k] * mat.data[k][j];
+            }
+        }
+    }
+    return result;
+}
