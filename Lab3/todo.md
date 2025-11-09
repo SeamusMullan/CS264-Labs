@@ -61,7 +61,7 @@
 - [x] `operator*`
 - [x] `operator~`
 - [x] `operator==`
-- [ ] `toStr()`
+- [x] `toStr()`
 - [ ] Test edge cases (empty matrices, 1×1 matrices)
 - [ ] Test invalid operations (dimension mismatches)
 - [ ] Test memory management (no memory leaks)
