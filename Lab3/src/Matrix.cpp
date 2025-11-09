@@ -1,4 +1,8 @@
 #include "Matrix.h"
+#include <sstream>
+#include <iomanip>
+#include <stdexcept>
+
 void Matrix::allocate() {
     data = new int*[m_rows];
     for (unsigned int i = 0; i < m_rows; i++) {
