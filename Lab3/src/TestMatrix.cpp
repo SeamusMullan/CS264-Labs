@@ -95,6 +95,16 @@ void Test_Case_4_Rows() {
     cout << "PASSED\n" << endl;
 }
 
+void Test_Case_5_Columns() {
+    cout << "Test Case 5: columns() method" << endl;
+    Matrix mat(3, 7);
+    
+    assert(mat.columns() == 7);
+    
+    cout << "Matrix dimensions: " << mat.columns() << " columns" << endl;
+    cout << "PASSED\n" << endl;
+}
+
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
@@ -104,6 +114,8 @@ int main() {
         Test_Case_1_Constructor();
         Test_Case_2_CopyConstructor();
         Test_Case_3_ArrayConstructor();
+        Test_Case_4_Rows();
+        Test_Case_5_Columns();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
