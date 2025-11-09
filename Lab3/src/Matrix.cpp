@@ -25,3 +25,24 @@ Matrix::Matrix(unsigned int m, unsigned int n) : m_rows(m), m_cols(n), data(null
     }
 }
 
+Matrix::Matrix(const Matrix &mat) : m_rows(mat.m_rows), m_cols(mat.m_cols), data(nullptr) {
+    allocate();
+    for (unsigned int i = 0; i < m_rows; i++) {
+        for (unsigned int j = 0; j < m_cols; j++) {
+            data[i][j] = mat.data[i][j];
+        }
+    }
+}
+
+Matrix::Matrix(int** array, unsigned int m, unsigned int n) : m_rows(m), m_cols(n), data(nullptr) {
+    allocate();
+    for (unsigned int i = 0; i < m_rows; i++) {
+        for (unsigned int j = 0; j < m_cols; j++) {
+            data[i][j] = array[i][j];
+        }
+    }
+}
+
+Matrix::~Matrix() {
+    deallocate();
+}
