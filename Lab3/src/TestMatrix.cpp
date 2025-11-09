@@ -257,9 +257,24 @@ void Test_Case_12_Equality() {
     cout << "PASSED\n" << endl;
 }
 
+void Test_Case_13_ToStr() {
+    cout << "Test Case 13: toStr() method" << endl;
+    Matrix mat(2, 3);
+    mat.set(0, 0, 1); mat.set(0, 1, 2); mat.set(0, 2, 3);
+    mat.set(1, 0, 4); mat.set(1, 1, 5); mat.set(1, 2, 6);
+    
+    string str = mat.toStr();
+    
+    // Check that string is not empty
+    assert(!str.empty());
+    
+    cout << "String representation of matrix:\n" << str << endl;
+    cout << "PASSED\n" << endl;
+}
+
 int main() {
     cout << "========================================" << endl;
-    cout << "     Matrix Class Test Suite" << endl;
+    cout << " Super fancy Matrix tests (for real)" << endl;
     cout << "========================================\n" << endl;
     
     try {
@@ -275,6 +290,7 @@ int main() {
         Test_Case_10_Multiply();
         Test_Case_11_Transpose();
         Test_Case_12_Equality();
+        Test_Case_13_ToStr();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
