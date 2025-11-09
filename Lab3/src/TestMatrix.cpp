@@ -49,6 +49,40 @@ void Test_Case_2_CopyConstructor() {
     cout << "Copied matrix:\n" << mat2.toStr() << endl;
     cout << "PASSED\n" << endl;
 }
+void Test_Case_3_ArrayConstructor() {
+    cout << "Test Case 3: Array Constructor" << endl;
+    
+    // Create a 2D array
+    int** array = new int*[2];
+    for (int i = 0; i < 2; i++) {
+        array[i] = new int[3];
+    }
+    
+    array[0][0] = 1; array[0][1] = 2; array[0][2] = 3;
+    array[1][0] = 4; array[1][1] = 5; array[1][2] = 6;
+    
+    Matrix mat(array, 2, 3);
+    
+    // Check dimensions and values
+    assert(mat.rows() == 2);
+    assert(mat.columns() == 3);
+    assert(mat.get(0, 0) == 1);
+    assert(mat.get(0, 1) == 2);
+    assert(mat.get(0, 2) == 3);
+    assert(mat.get(1, 0) == 4);
+    assert(mat.get(1, 1) == 5);
+    assert(mat.get(1, 2) == 6);
+    
+    cout << "Matrix from array:\n" << mat.toStr() << endl;
+    
+    // Clean up array
+    for (int i = 0; i < 2; i++) {
+        delete[] array[i];
+    }
+    delete[] array;
+    
+    cout << "PASSED\n" << endl;
+}
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
