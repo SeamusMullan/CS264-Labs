@@ -135,6 +135,52 @@ void Test_Case_7_Set() {
     cout << "PASSED\n" << endl;
 }
 
+void Test_Case_8_Plus() {
+    cout << "Test Case 8: operator+ (Addition)" << endl;
+    Matrix mat1(2, 2);
+    mat1.set(0, 0, 1); mat1.set(0, 1, 2);
+    mat1.set(1, 0, 3); mat1.set(1, 1, 4);
+    
+    Matrix mat2(2, 2);
+    mat2.set(0, 0, 5); mat2.set(0, 1, 6);
+    mat2.set(1, 0, 7); mat2.set(1, 1, 8);
+    
+    Matrix result = mat1 + mat2;
+    
+    assert(result.get(0, 0) == 6);
+    assert(result.get(0, 1) == 8);
+    assert(result.get(1, 0) == 10);
+    assert(result.get(1, 1) == 12);
+    
+    cout << "Matrix 1:\n" << mat1.toStr() << endl;
+    cout << "Matrix 2:\n" << mat2.toStr() << endl;
+    cout << "Result (mat1 + mat2):\n" << result.toStr() << endl;
+    cout << "PASSED\n" << endl;
+}
+
+void Test_Case_9_Minus() {
+    cout << "Test Case 9: operator- (Subtraction)" << endl;
+    Matrix mat1(2, 2);
+    mat1.set(0, 0, 10); mat1.set(0, 1, 9);
+    mat1.set(1, 0, 8); mat1.set(1, 1, 7);
+    
+    Matrix mat2(2, 2);
+    mat2.set(0, 0, 1); mat2.set(0, 1, 2);
+    mat2.set(1, 0, 3); mat2.set(1, 1, 4);
+    
+    Matrix result = mat1 - mat2;
+    
+    assert(result.get(0, 0) == 9);
+    assert(result.get(0, 1) == 7);
+    assert(result.get(1, 0) == 5);
+    assert(result.get(1, 1) == 3);
+    
+    cout << "Matrix 1:\n" << mat1.toStr() << endl;
+    cout << "Matrix 2:\n" << mat2.toStr() << endl;
+    cout << "Result (mat1 - mat2):\n" << result.toStr() << endl;
+    cout << "PASSED\n" << endl;
+}
+
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
@@ -148,12 +194,14 @@ int main() {
         Test_Case_5_Columns();
         Test_Case_6_Get();
         Test_Case_7_Set();
+        Test_Case_8_Plus();
+        Test_Case_9_Minus();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
         cout << "========================================" << endl;
     } catch (const exception& e) {
-        cerr << "Test failed with exception: " << e.what() << endl;
+        cerr << "Test failed (lol): " << e.what() << endl;
         return 1;
     }
     
