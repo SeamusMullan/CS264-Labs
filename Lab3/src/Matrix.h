@@ -1,3 +1,5 @@
+#include <string>
+
 class Matrix {
 private:
     int** data;
