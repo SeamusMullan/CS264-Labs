@@ -146,6 +146,7 @@ int main() {
         Test_Case_3_ArrayConstructor();
         Test_Case_4_Rows();
         Test_Case_5_Columns();
+        Test_Case_6_Get();
         Test_Case_7_Set();
         
         cout << "========================================" << endl;
