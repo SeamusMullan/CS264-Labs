@@ -47,6 +47,23 @@ Matrix::~Matrix() {
     deallocate();
 }
 
+Matrix& Matrix::operator=(const Matrix &mat) {
+    if (this != &mat) {
+        deallocate();
+        
+        m_rows = mat.m_rows;
+        m_cols = mat.m_cols;
+        
+        allocate();
+        for (unsigned int i = 0; i < m_rows; i++) {
+            for (unsigned int j = 0; j < m_cols; j++) {
+                data[i][j] = mat.data[i][j];
+            }
+        }
+    }
+    return *this;
+}
+
 unsigned int Matrix::rows() const {
     return m_rows;
 }
