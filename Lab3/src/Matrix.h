@@ -3,9 +3,10 @@
 
 #include <string>
 
-class Matrix {
+class Matrix
+{
 private:
-    int** data;
+    int **data;
     unsigned int m_rows;
     unsigned int m_cols;
 
@@ -18,11 +19,11 @@ public:
 
     Matrix(const Matrix &mat);
 
-    Matrix(int** array, unsigned int m, unsigned int n);
+    Matrix(int **array, unsigned int m, unsigned int n);
 
     ~Matrix();
 
-    Matrix& operator=(const Matrix &mat);
+    Matrix &operator=(const Matrix &mat);
 
     unsigned int rows() const;
 
