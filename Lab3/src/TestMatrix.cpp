@@ -49,6 +49,7 @@ void Test_Case_2_CopyConstructor() {
     cout << "Copied matrix:\n" << mat2.toStr() << endl;
     cout << "PASSED\n" << endl;
 }
+
 void Test_Case_3_ArrayConstructor() {
     cout << "Test Case 3: Array Constructor" << endl;
     
@@ -83,6 +84,17 @@ void Test_Case_3_ArrayConstructor() {
     
     cout << "PASSED\n" << endl;
 }
+
+void Test_Case_4_Rows() {
+    cout << "Test Case 4: rows() method" << endl;
+    Matrix mat(5, 3);
+    
+    assert(mat.rows() == 5);
+    
+    cout << "Matrix dimensions: " << mat.rows() << " rows" << endl;
+    cout << "PASSED\n" << endl;
+}
+
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
