@@ -59,3 +59,16 @@ unsigned int Matrix::columns() const {
     return m_cols;
 }
 
+int Matrix::get(unsigned int i, unsigned int j) const {
+    if (i >= m_rows || j >= m_cols) {
+        throw std::out_of_range("Matrix indices out of range");
+    }
+    return data[i][j];
+}
+
+void Matrix::set(unsigned int i, unsigned int j, int value) {
+    if (i >= m_rows || j >= m_cols) {
+        throw std::out_of_range("Matrix indices out of range");
+    }
+    data[i][j] = value;
+}
