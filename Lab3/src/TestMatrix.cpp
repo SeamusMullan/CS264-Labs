@@ -91,6 +91,7 @@ int main() {
     try {
         Test_Case_1_Constructor();
         Test_Case_2_CopyConstructor();
+        Test_Case_3_ArrayConstructor();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
