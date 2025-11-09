@@ -181,6 +181,82 @@ void Test_Case_9_Minus() {
     cout << "PASSED\n" << endl;
 }
 
+void Test_Case_10_Multiply() {
+    cout << "Test Case 10: operator* (Multiplication)" << endl;
+    Matrix mat1(2, 3);
+    mat1.set(0, 0, 1); mat1.set(0, 1, 2); mat1.set(0, 2, 3);
+    mat1.set(1, 0, 4); mat1.set(1, 1, 5); mat1.set(1, 2, 6);
+    
+    Matrix mat2(3, 2);
+    mat2.set(0, 0, 7); mat2.set(0, 1, 8);
+    mat2.set(1, 0, 9); mat2.set(1, 1, 10);
+    mat2.set(2, 0, 11); mat2.set(2, 1, 12);
+    
+    Matrix result = mat1 * mat2;
+    
+    // Result should be 2x2
+    assert(result.rows() == 2);
+    assert(result.columns() == 2);
+    
+    // Expected: [1*7+2*9+3*11, 1*8+2*10+3*12] = [58, 64]
+    //           [4*7+5*9+6*11, 4*8+5*10+6*12] = [139, 154]
+    assert(result.get(0, 0) == 58);
+    assert(result.get(0, 1) == 64);
+    assert(result.get(1, 0) == 139);
+    assert(result.get(1, 1) == 154);
+    
+    cout << "Matrix 1 (2x3):\n" << mat1.toStr() << endl;
+    cout << "Matrix 2 (3x2):\n" << mat2.toStr() << endl;
+    cout << "Result (mat1 * mat2):\n" << result.toStr() << endl;
+    cout << "PASSED\n" << endl;
+}
+
+void Test_Case_11_Transpose() {
+    cout << "Test Case 11: operator~ (Transpose)" << endl;
+    Matrix mat(2, 3);
+    mat.set(0, 0, 1); mat.set(0, 1, 2); mat.set(0, 2, 3);
+    mat.set(1, 0, 4); mat.set(1, 1, 5); mat.set(1, 2, 6);
+    
+    Matrix result = ~mat;
+    
+    // Result should be 3x2
+    assert(result.rows() == 3);
+    assert(result.columns() == 2);
+    
+    assert(result.get(0, 0) == 1); assert(result.get(0, 1) == 4);
+    assert(result.get(1, 0) == 2); assert(result.get(1, 1) == 5);
+    assert(result.get(2, 0) == 3); assert(result.get(2, 1) == 6);
+    
+    cout << "Original matrix (2x3):\n" << mat.toStr() << endl;
+    cout << "Transposed matrix (3x2):\n" << result.toStr() << endl;
+    cout << "PASSED\n" << endl;
+}
+
+void Test_Case_12_Equality() {
+    cout << "Test Case 12: operator== (Equality)" << endl;
+    Matrix mat1(2, 2);
+    mat1.set(0, 0, 1); mat1.set(0, 1, 2);
+    mat1.set(1, 0, 3); mat1.set(1, 1, 4);
+    
+    Matrix mat2(2, 2);
+    mat2.set(0, 0, 1); mat2.set(0, 1, 2);
+    mat2.set(1, 0, 3); mat2.set(1, 1, 4);
+    
+    Matrix mat3(2, 2);
+    mat3.set(0, 0, 1); mat3.set(0, 1, 2);
+    mat3.set(1, 0, 3); mat3.set(1, 1, 5); // Different
+    
+    assert(mat1 == mat2);
+    assert(!(mat1 == mat3));
+    
+    cout << "Matrix 1:\n" << mat1.toStr() << endl;
+    cout << "Matrix 2:\n" << mat2.toStr() << endl;
+    cout << "mat1 == mat2: " << (mat1 == mat2 ? "true" : "false") << endl;
+    cout << "Matrix 3:\n" << mat3.toStr() << endl;
+    cout << "mat1 == mat3: " << (mat1 == mat3 ? "true" : "false") << endl;
+    cout << "PASSED\n" << endl;
+}
+
 int main() {
     cout << "========================================" << endl;
     cout << "     Matrix Class Test Suite" << endl;
@@ -196,6 +272,9 @@ int main() {
         Test_Case_7_Set();
         Test_Case_8_Plus();
         Test_Case_9_Minus();
+        Test_Case_10_Multiply();
+        Test_Case_11_Transpose();
+        Test_Case_12_Equality();
         
         cout << "========================================" << endl;
         cout << "   All tests passed successfully!" << endl;
