@@ -89,3 +89,17 @@ void Matrix::set(unsigned int i, unsigned int j, int value) {
     }
     data[i][j] = value;
 }
+
+Matrix Matrix::operator+(const Matrix &mat) {
+    if (m_rows != mat.m_rows || m_cols != mat.m_cols) {
+        throw std::invalid_argument("Matrix dimensions must match for addition");
+    }
+    
+    Matrix result(m_rows, m_cols);
+    for (unsigned int i = 0; i < m_rows; i++) {
+        for (unsigned int j = 0; j < m_cols; j++) {
+            result.data[i][j] = data[i][j] + mat.data[i][j];
+        }
+    }
+    return result;
+}
