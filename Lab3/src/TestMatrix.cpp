@@ -1,16 +1,16 @@
 #include "Matrix.h"
 #include <iostream>
-#include <cassert>
+#include <cassert> // we doin real testing here
 
 using namespace std;
 
 /**
- * Test case 1 for specialized constructor Matrix(m, n).
- * Tests if a matrix is properly initialized with zeros.
+ * Test case for constructor Matrix(m, n)
+ * Tests if a matrix is actually full of zeros.
  */
 void Test_Case_1_Constructor()
 {
-    cout << "Test Case 1: Specialized Constructor" << endl;
+    cout << "Test Case 1: Constructor" << endl;
     Matrix mat(3, 3);
 
     // Check dimensions
@@ -251,6 +251,7 @@ void Test_Case_10_Multiply()
     assert(result.rows() == 2);
     assert(result.columns() == 2);
 
+    // lets pray my maths is good
     // Expected: [1*7+2*9+3*11, 1*8+2*10+3*12] = [58, 64]
     //           [4*7+5*9+6*11, 4*8+5*10+6*12] = [139, 154]
     assert(result.get(0, 0) == 58);
@@ -361,7 +362,7 @@ void Test_Case_13_ToStr()
 int main()
 {
     cout << "========================================" << endl;
-    cout << " Super fancy Matrix tests (for real)" << endl;
+    cout << "     Super fancy Matrix tests" << endl;
     cout << "========================================\n"
          << endl;
 
@@ -382,12 +383,13 @@ int main()
         Test_Case_13_ToStr();
 
         cout << "========================================" << endl;
-        cout << "   All tests passed successfully!" << endl;
+        cout << " All tests passed successfully! (trust)" << endl;
         cout << "========================================" << endl;
     }
     catch (const exception &e)
     {
-        cerr << "Test failed (lol): " << e.what() << endl;
+        cerr << "To quote Coding Jesus (youtuber), \"You're cooked\"" << std::endl;
+        cerr << "Test failed: " << e.what() << endl;
         return 1;
     }
 
