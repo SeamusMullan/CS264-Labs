@@ -5,10 +5,10 @@
 
 class Module {
 public:
-    // empty constrcutr
+    // empty constrcutr (input of actual vars later)
     Module();
 
-    // default 2 creds and 0 students
+    // default 2 creds and 0 students, but allow specific ones
     Module(std::string name, unsigned int credits = 2, unsigned int students = 0);
 
     std::string getName() const;
