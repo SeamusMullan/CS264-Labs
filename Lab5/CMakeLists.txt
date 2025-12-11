@@ -4,7 +4,7 @@ project(CS264-Lab5)
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 
 # Build the ModuleManagement executable
-add_executable(lab5
+add_executable(lab5_23434744
     ${SRC_DIR}/main.cpp
     ${SRC_DIR}/Module.cpp
     ${SRC_DIR}/Module.h
