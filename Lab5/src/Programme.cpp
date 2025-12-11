@@ -1,5 +1,5 @@
 #include "Programme.h"
-#include <sstream>
+#include <sstream> // for printing
 
 Programme::Programme() : _name(""), _year(0), modules(nullptr), cap(0), moduleCount(0) {}
 
