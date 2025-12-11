@@ -1,20 +1,25 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+// #ifndef was for compiler, cuz im a nerd :p
+
 #include <string>
 
 class Matrix
 {
 private:
-    int **data;
-    unsigned int m_rows;
-    unsigned int m_cols;
+    int **data; // ptr to data
+    unsigned int m_rows; // num rows
+    unsigned int m_cols; // num cols
 
     void allocate();
 
     void deallocate();
 
 public:
+
+    // these are all commented in Matrix.cpp
+
     Matrix(unsigned int m, unsigned int n);
 
     Matrix(const Matrix &mat);
